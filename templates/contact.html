@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+
+<div class="container1">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/static/img/contuctus.jpg" class="d-block w-100" alt="..." width="1200" height="500">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Contact Us</h5>
+            <p>Plese enter your contact information.</p>
+          </div>
+        </div>
+</div>
+
+
+<div class="container my-4">
+    <h1 style="text-align:center;">Contact Us</h1>
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Full Name">
+          </div>
+          <div class="mb-3">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="phone">Contuct Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Contuct Number">
+          </div>
+          <div class="mb-3">
+            <label for="address1">Address1</label>
+            <input type="address1" class="form-control" id="address1" name="address1" placeholder="Present Address">
+          </div>
+          <div class="mb-3">
+            <label for="address2">Address2</label>
+            <input type="address2" class="form-control" id="address2" name="address2" placeholder="Permanent Address">
+          </div>
+          <div class="mb-3">
+            <label for="desc">Comment</label>
+            <textarea class="form-control" id="desc" name="desc"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        
+</form>
+    
+</div>
+
+
+{% endblock body %}
